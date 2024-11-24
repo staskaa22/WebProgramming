@@ -1,0 +1,23 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Artist Details</title>
+</head>
+<body>
+<header>
+    <h1 th:text="'Artist - ' + ${artist.getId}"></h1>
+</header>
+<section>
+    <h2>Artist</h2>
+    <p th:text="|${artist.getFirstName()} ${artist.getLastName()}|"></p>
+    <h2>Year</h2>
+    <p th:text="${artist.getBio()}"></p>
+    <h2>Songs:</h2>
+    <ul>
+        <li th:each="song:${artist.getSongs()}"
+            th:text="${song.toString()}"></li>
+    </ul>
+    <a href="/listSongs"> Back to Home</a>
+</section>
+</body>
+</html>
